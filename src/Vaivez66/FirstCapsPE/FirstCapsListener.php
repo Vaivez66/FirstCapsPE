@@ -22,7 +22,7 @@ class FirstCapsListener implements Listener{
 
     public function onChat(PlayerChatEvent $event){
         $msg = $event->getMessage();
-        if($msg{0} != '/'){
+        if($msg{0} !== '/'){
             $msg{0} = strtoupper($msg{0});
             if(strpos($msg, '.') == true && $msg{strpos($msg, '.') + 1} == ' '){
                 $msg{strpos($msg, '.') + 2} = strtoupper($msg{strpos($msg, '.') + 2});
