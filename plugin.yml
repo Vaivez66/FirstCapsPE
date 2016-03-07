@@ -1,7 +1,7 @@
 name: FirstCapsPE
 main: Vaivez66\FirstCapsPE\FirstCaps
 version: 1.0.0
-api: 1.12.0
+api: [1.12.0, 2.0.0]
 load: POSTWORLD
 authors: [Vaivez66]
 description: "Mini plugin for fun :P (make a caps for first character on chat)"
