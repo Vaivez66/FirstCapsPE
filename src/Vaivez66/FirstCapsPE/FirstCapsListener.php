@@ -20,14 +20,16 @@ class FirstCapsListener implements Listener{
      * @param PlayerChatEvent $event
      */
 
-    public function onChat(PlayerChatEvent $event){
+     public function onChat(PlayerChatEvent $event){
         $msg = $event->getMessage();
-        if($msg{0} !== '/'){
-            $msg{0} = strtoupper($msg{0});
-            if(strpos($msg, '.') == true && $msg{strpos($msg, '.') + 1} == ' '){
-                $msg{strpos($msg, '.') + 2} = strtoupper($msg{strpos($msg, '.') + 2});
+        foreach($this->plugin->getLastCharacter() as $c) {
+            if ($msg{0} !== '/') {
+                $msg{0} = strtoupper($msg{0});
+                if (strpos($msg, $c) == true && $msg{strpos($msg, $c) + 1} == ' ') {
+                    $msg{strpos($msg, $c) + 2} = strtoupper($msg{strpos($msg, $c) + 2});
+                }
+                $event->setMessage($msg);
             }
-            $event->setMessage($msg);
         }
     }
 
