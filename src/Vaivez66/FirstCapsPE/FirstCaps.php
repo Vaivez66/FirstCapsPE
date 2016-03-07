@@ -16,6 +16,15 @@ class FirstCaps extends PluginBase{
         $this->getServer()->getLogger()->info(TF::GREEN . "FirstCapsPE is ready!");
         $this->getServer()->getPluginManager()->registerEvents(new FirstCapsListener($this), $this);
     }
+    
+    /**
+     * @return array
+     */
+
+    public function getLastCharacter(){
+        $a = ['.', '?', '!'];
+        return $a;
+    }
 
     public function onDisable(){
         $this->getServer()->getLogger()->info(TF::RED . "FirstCapsPE was disabled!");
